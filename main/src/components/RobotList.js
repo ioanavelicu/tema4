@@ -24,9 +24,12 @@ class RobotList extends Component {
 		})
 	}
 	render() {
+		const addRobot = (robot) =>{
+			this.store.addRobot(robot)
+		}
 		return (
 			<div>
-				 
+				<RobotForm onAdd={addRobot}/>
 				{
 					this.state.robots.map((e, i) => 
 						<Robot item={e} key={i} />
